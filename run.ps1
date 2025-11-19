@@ -7,7 +7,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 # Function to run a command in a new terminal window
-function Run-App {
+function Start-App {
     param([string]$Name, [string]$Command)
 
     Write-Host "Opening $Name in new terminal..." -ForegroundColor Green
@@ -81,53 +81,53 @@ switch ($Mode) {
         Write-Host "Starting all applications..." -ForegroundColor Green
         Write-Host ""
 
-        Run-App "Web App" "pnpm --filter ./apps/web dev"
-        Run-App "API Server" "pnpm --filter ./apps/api dev"
-        Run-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
+        Start-App "Web App" "pnpm --filter ./apps/web dev"
+        Start-App "API Server" "pnpm --filter ./apps/api dev"
+        Start-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
     }
 
     "web" {
         Write-Host "Starting web application..." -ForegroundColor Green
-        Run-App "Web App" "pnpm --filter ./apps/web dev"
+        Start-App "Web App" "pnpm --filter ./apps/web dev"
     }
 
     "api" {
         Write-Host "Starting API server..." -ForegroundColor Green
-        Run-App "API Server" "pnpm --filter ./apps/api dev"
+        Start-App "API Server" "pnpm --filter ./apps/api dev"
     }
 
     "admin" {
         Write-Host "Starting admin dashboard..." -ForegroundColor Green
-        Run-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
+        Start-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
     }
 
     "frontend" {
         Write-Host "Starting frontend applications (Web + Admin)..." -ForegroundColor Green
         Write-Host ""
 
-        Run-App "Web App" "pnpm --filter ./apps/web dev"
-        Run-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
+        Start-App "Web App" "pnpm --filter ./apps/web dev"
+        Start-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
     }
 
     "backend" {
         Write-Host "Starting backend (API server)..." -ForegroundColor Green
-        Run-App "API Server" "pnpm --filter ./apps/api dev"
+        Start-App "API Server" "pnpm --filter ./apps/api dev"
     }
 
     "web-api" {
         Write-Host "Starting web + API..." -ForegroundColor Green
         Write-Host ""
 
-        Run-App "Web App" "pnpm --filter ./apps/web dev"
-        Run-App "API Server" "pnpm --filter ./apps/api dev"
+        Start-App "Web App" "pnpm --filter ./apps/web dev"
+        Start-App "API Server" "pnpm --filter ./apps/api dev"
     }
 
     "admin-api" {
         Write-Host "Starting admin + API..." -ForegroundColor Green
         Write-Host ""
 
-        Run-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
-        Run-App "API Server" "pnpm --filter ./apps/api dev"
+        Start-App "Admin Dashboard" "pnpm --filter ./apps/admin dev"
+        Start-App "API Server" "pnpm --filter ./apps/api dev"
     }
 
     default {
