@@ -1,8 +1,8 @@
 {
   "files": [],
   "references": [
-    { "path": "./packages/types" }
-    // { "path": "./packages/utils" },
-    // { "path": "./packages/db" }
+    { "path": "./packages/types" },
+    { "path": "./packages/utils" },
+    { "path": "./packages/db" }
   ]
 }
