@@ -62,47 +62,55 @@ pnpm install
 ```
 
 3. Set up environment variables:
-   Create `.env.local` files in the root and each app directory:
-
-**Root `.env.local`:**
+   Create `.env.local` in the root directory with all configuration:
 
 ```env
+# Database
 DATABASE_URL="mongodb://localhost:27017/fine-wyne"
+
+# Redis
 REDIS_URL="redis://localhost:6379"
+
+# JWT
 JWT_SECRET="your-super-secret-jwt-key-change-this-in-production"
+
+# Ports
+API_PORT="4000"
+WEB_PORT="3000"
+ADMIN_PORT="3001"
+
+# URLs
 NEXTAUTH_URL="http://localhost:3000"
 FRONTEND_URL="http://localhost:3000"
 ADMIN_URL="http://localhost:3001"
-NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
 API_URL="http://localhost:4000"
-```
 
-**`apps/web/.env.local`:**
-
-```env
+# NextAuth
 NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
-NEXTAUTH_URL="http://localhost:3000"
-API_URL="http://localhost:4000"
-DATABASE_URL="mongodb://localhost:27017/fine-wyne"
+
+# File Upload (DigitalOcean Spaces)
+DO_SPACES_ACCESS_KEY=""
+DO_SPACES_SECRET_KEY=""
+DO_SPACES_BUCKET=""
+DO_SPACES_REGION=""
+DO_SPACES_ENDPOINT=""
+
+# Email (for password reset, etc.)
+EMAIL_SERVER_HOST=""
+EMAIL_SERVER_PORT="587"
+EMAIL_SERVER_USER=""
+EMAIL_SERVER_PASSWORD=""
+EMAIL_FROM=""
+
+# Push Notifications
+VAPID_PUBLIC_KEY=""
+VAPID_PRIVATE_KEY=""
+
+# Environment
+NODE_ENV="development"
 ```
 
-**`apps/admin/.env.local`:**
-
-```env
-NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
-NEXTAUTH_URL="http://localhost:3001"
-API_URL="http://localhost:4000"
-DATABASE_URL="mongodb://localhost:27017/fine-wyne"
-```
-
-**`apps/api/.env.local`:**
-
-```env
-DATABASE_URL="mongodb://localhost:27017/fine-wyne"
-REDIS_URL="redis://localhost:6379"
-JWT_SECRET="your-super-secret-jwt-key-change-this-in-production"
-FRONTEND_URL="http://localhost:3000"
-```
+**Note**: All apps read from the centralized config package (`@fine-wyne/config`), so the root `.env.local` provides variables for the entire monorepo.
 
 4. Set up the database:
 
