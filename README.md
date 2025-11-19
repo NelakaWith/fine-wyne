@@ -122,23 +122,43 @@ pnpm --filter @fine-wyne/db db:push
 
 ### Development
 
-Run all services:
+#### Using the Run Script (Recommended)
+
+Use the PowerShell script for flexible app launching (opens each app in a separate terminal window):
+
+```powershell
+# Run all apps (opens 3 separate windows)
+.\run.ps1 -Mode all
+
+# Run individual apps (opens 1 window)
+.\run.ps1 -Mode web      # Web app only (port 3000)
+.\run.ps1 -Mode api      # API server only (port 4000)
+.\run.ps1 -Mode admin    # Admin dashboard only (port 3001)
+
+# Run combinations (opens multiple windows)
+.\run.ps1 -Mode frontend # Web + Admin (opens 2 windows: 3000 + 3001)
+.\run.ps1 -Mode backend  # API only (opens 1 window: 4000)
+.\run.ps1 -Mode web-api  # Web + API (opens 2 windows: 3000 + 4000)
+.\run.ps1 -Mode admin-api # Admin + API (opens 2 windows: 3001 + 4000)
+```
+
+#### Using Turbo (All apps)
 
 ```bash
 pnpm dev
 ```
 
-Or run individual services:
+#### Manual Commands
 
 ```bash
 # Web app (port 3000)
-pnpm --filter @fine-wyne/web dev
+pnpm --filter ./apps/web dev
 
 # API server (port 4000)
-pnpm --filter @fine-wyne/api dev
+pnpm --filter ./apps/api dev
 
 # Admin dashboard (port 3001)
-pnpm --filter @fine-wyne/admin dev
+pnpm --filter ./apps/admin dev
 ```
 
 ### Production Build
