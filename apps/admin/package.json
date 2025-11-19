@@ -15,7 +15,8 @@
     "react-dom": "19.2.0",
     "@fine-wyne/db": "workspace:*",
     "@fine-wyne/types": "workspace:*",
-    "@fine-wyne/utils": "workspace:*"
+    "@fine-wyne/utils": "workspace:*",
+    "@fine-wyne/ui": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
