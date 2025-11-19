@@ -1,20 +1,24 @@
 {
   "name": "fine-wyne",
   "version": "1.0.0",
-  "description": "",
+  "description": "Real-time chat application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test"
   },
-  "keywords": [],
+  "keywords": [
+    "chat",
+    "real-time",
+    "nextjs"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.17.1",
   "devDependencies": {
-    "turbo": "^2.6.1"
-  },
-  "dependencies": {
-    "@prisma/client": "^6.19.0",
-    "prisma": "^6.19.0"
+    "turbo": "^2.6.1",
+    "typescript": "^5.0.0"
   }
 }
