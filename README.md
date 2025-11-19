@@ -62,14 +62,46 @@ pnpm install
 ```
 
 3. Set up environment variables:
-   Create `.env.local` in the root directory:
+   Create `.env.local` files in the root and each app directory:
+
+**Root `.env.local`:**
 
 ```env
 DATABASE_URL="mongodb://localhost:27017/fine-wyne"
 REDIS_URL="redis://localhost:6379"
-JWT_SECRET="your-secret-key"
-NEXTAUTH_SECRET="your-nextauth-secret"
+JWT_SECRET="your-super-secret-jwt-key-change-this-in-production"
 NEXTAUTH_URL="http://localhost:3000"
+FRONTEND_URL="http://localhost:3000"
+ADMIN_URL="http://localhost:3001"
+NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
+API_URL="http://localhost:4000"
+```
+
+**`apps/web/.env.local`:**
+
+```env
+NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
+NEXTAUTH_URL="http://localhost:3000"
+API_URL="http://localhost:4000"
+DATABASE_URL="mongodb://localhost:27017/fine-wyne"
+```
+
+**`apps/admin/.env.local`:**
+
+```env
+NEXTAUTH_SECRET="your-nextauth-secret-key-change-this-in-production"
+NEXTAUTH_URL="http://localhost:3001"
+API_URL="http://localhost:4000"
+DATABASE_URL="mongodb://localhost:27017/fine-wyne"
+```
+
+**`apps/api/.env.local`:**
+
+```env
+DATABASE_URL="mongodb://localhost:27017/fine-wyne"
+REDIS_URL="redis://localhost:6379"
+JWT_SECRET="your-super-secret-jwt-key-change-this-in-production"
+FRONTEND_URL="http://localhost:3000"
 ```
 
 4. Set up the database:
