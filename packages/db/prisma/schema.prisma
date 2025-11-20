@@ -21,9 +21,11 @@ model User {
   updatedAt DateTime @updatedAt
 
   // Relations
+  chatIds         String[] @db.ObjectId
   sentMessages     Message[] @relation("MessageSender")
-  chats            Chat[]    @relation("ChatMembers")
-  seenMessages     Message[] @relation("MessageSeenBy")
+  chats            Chat[]    @relation("ChatMembers", fields: [chatIds], references: [id])
+  seenMessageIds   String[] @db.ObjectId
+  seenMessages     Message[] @relation("MessageSeenBy", fields: [seenMessageIds], references: [id])
 
   @@map("users")
 }
@@ -31,10 +33,10 @@ model User {
 model Chat {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   isGroup    Boolean  @default(false)
-  members    User[]   @relation("ChatMembers", fields: [memberIds], references: [id])
   memberIds  String[] @db.ObjectId
-  lastMessageId String? @db.ObjectId
-  lastMessage   Message? @relation("ChatLastMessage", fields: [lastMessageId], references: [id])
+  members    User[]   @relation("ChatMembers", fields: [memberIds], references: [id])
+  lastMessageId String? @unique @db.ObjectId
+  lastMessage   Message? @relation("ChatLastMessage", fields: [lastMessageId], references: [id], onDelete: NoAction, onUpdate: NoAction)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
@@ -54,8 +56,9 @@ model Message {
   fileUrl   String?
   type      String   @default("text")
   createdAt DateTime @default(now())
-  seenBy    User[]   @relation("MessageSeenBy", fields: [seenByIds], references: [id])
   seenByIds String[] @db.ObjectId
+  seenBy    User[] @relation("MessageSeenBy", fields: [seenByIds], references: [id])
+  lastMessageFor Chat? @relation("ChatLastMessage")
 
   @@map("messages")
 }

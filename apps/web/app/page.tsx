@@ -1,9 +1,7 @@
-import { Button } from "@fine-wyne/ui";
-
 export default function Home() {
   return (
     <main>
-      <Button>test</Button>
+      <div>test</div>
     </main>
   );
 }

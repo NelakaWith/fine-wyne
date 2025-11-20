@@ -2,8 +2,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@fine-wyne/ui": ["packages/ui"],
-      "@fine-wyne/theme": ["packages/theme"],
       "@fine-wyne/types": ["packages/types/src"],
       "@fine-wyne/utils": ["packages/utils/src"],
       "@fine-wyne/db": ["packages/db/src"],
