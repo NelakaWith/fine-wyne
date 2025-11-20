@@ -19,10 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@types/*": ["../../packages/types/src/*"],
-      "@utils/*": ["../../packages/utils/src/*"],
-      "@db/*": ["../../packages/db/src/*"]
+      "@/*": ["./*"],
+      "@types/*": ["../../packages/types/dist/*"],
+      "@utils/*": ["../../packages/utils/dist/*"],
+      "@db/*": ["../../packages/db/dist/*"],
+      "@fine-wyne/theme": ["../../packages/theme/dist/index.d.ts"]
     }
   },
   "include": [
