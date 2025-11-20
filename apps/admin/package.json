@@ -1,0 +1,28 @@
+{
+  "name": "@fine-wyne/admin",
+  "version": "1.0.0",
+  "description": "Admin dashboard for fine-wyne",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "@fine-wyne/db": "workspace:*",
+    "@fine-wyne/types": "workspace:*",
+    "@fine-wyne/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0"
+  }
+}

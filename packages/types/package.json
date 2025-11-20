@@ -1,0 +1,14 @@
+{
+  "name": "@fine-wyne/types",
+  "version": "1.0.0",
+  "description": "Type definitions for fine-wyne",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

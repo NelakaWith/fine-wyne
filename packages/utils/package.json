@@ -1,0 +1,15 @@
+{
+  "name": "@fine-wyne/utils",
+  "version": "1.0.0",
+  "description": "Utility functions for fine-wyne",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

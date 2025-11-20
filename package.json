@@ -1,0 +1,24 @@
+{
+  "name": "fine-wyne",
+  "version": "1.0.0",
+  "description": "Real-time chat application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test"
+  },
+  "keywords": [
+    "chat",
+    "real-time",
+    "nextjs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
+  "devDependencies": {
+    "turbo": "^2.6.1",
+    "typescript": "^5.0.0"
+  }
+}
