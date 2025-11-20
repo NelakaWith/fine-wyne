@@ -1,11 +1,13 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./packages/types" },
-    { "path": "./packages/utils" },
-    { "path": "./packages/db" },
-    { "path": "./packages/config" },
-    { "path": "./packages/ui" },
-    { "path": "./packages/theme" }
-  ]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@fine-wyne/ui": ["packages/ui"],
+      "@fine-wyne/theme": ["packages/theme"],
+      "@fine-wyne/types": ["packages/types/src"],
+      "@fine-wyne/utils": ["packages/utils/src"],
+      "@fine-wyne/db": ["packages/db/src"],
+      "@fine-wyne/config": ["packages/config"]
+    }
+  }
 }
